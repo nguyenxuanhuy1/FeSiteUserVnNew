@@ -47,7 +47,7 @@ const CardHot: React.FC<CardHotProps> = ({ posts, loading = false }) => {
               }}
             >
               <div className="cardHotOverlay">
-                {item.isFeatured && <span className="cardHotHighlight">HOT</span>}
+                {item.isFeatured && <span className="cardHotHighlight">Nổi bật</span>}
                 <h3 className="cardHotTitle">{item.title}</h3>
                 <div className="cardHotFooter">
                   <div className="cardHotViews" style={{ color: 'rgba(255,255,255,0.8)', fontSize: 13 }}>

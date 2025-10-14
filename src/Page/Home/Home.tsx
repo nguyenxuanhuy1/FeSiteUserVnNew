@@ -7,6 +7,8 @@ import { Post } from '../Components/Card/interface';
 import CardNormal from '../Components/Card/CardNormal/CardNormal';
 import ErrorCard from '../../Components/Err/ErrCallData';
 import { Divider } from 'antd';
+import ScrollingTextLinks from '../Components/LinkOut';
+import PhoneButton from '../Components/Phone';
 const Home = () => {
     const [data, setData] = useState<Post[]>([]);
     const [newsData, setNewsData] = useState<Post[]>([]);
@@ -78,6 +80,8 @@ const Home = () => {
 
                 </div>
             </div>
+           <ScrollingTextLinks/>
+           <PhoneButton/>
         </div>
     )
 

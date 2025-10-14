@@ -1,5 +1,5 @@
 import React from "react";
-import { TagFilled, ClockCircleOutlined, EyeOutlined } from "@ant-design/icons";
+import { EyeOutlined } from "@ant-design/icons";
 import { CardHotProps } from "../interface";
 import { Skeleton } from "antd";
 import { getTimeAgo } from "../../tinhTime";
