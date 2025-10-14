@@ -1,0 +1,153 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Công nghệ AI đang thay đổi thế giới như thế nào?",
+      "summary": "Trí tuệ nhân tạo (AI) đang tác động mạnh mẽ đến mọi lĩnh vực từ y tế, giáo dục cho đến sản xuất.",
+      "image": "https://picsum.photos/600/400?random=1",
+      "createdAt": "2025-10-10T09:30:00Z",
+      "tags": [
+        "#AI",
+        "#CôngNghệ",
+        "#XuHướng"
+      ],
+      "category": "Công nghệ"
+    },
+    {
+      "id": 2,
+      "title": "Thời tiết hôm nay: Mưa lớn ở nhiều khu vực miền Trung",
+      "summary": "Do ảnh hưởng của áp thấp nhiệt đới, nhiều khu vực miền Trung có mưa lớn kéo dài, cảnh báo lũ quét.",
+      "image": "https://picsum.photos/600/400?random=2",
+      "createdAt": "2025-10-08T14:00:00Z",
+      "tags": [
+        "#ThờiTiết",
+        "#MiềnTrung"
+      ],
+      "category": "Thời sự"
+    },
+    {
+      "id": 3,
+      "title": "Bí quyết học IELTS hiệu quả trong 3 tháng",
+      "summary": "Hướng dẫn lộ trình học IELTS chi tiết giúp bạn đạt mục tiêu 5.0 chỉ trong 3 tháng.",
+      "image": "https://picsum.photos/600/400?random=3",
+      "createdAt": "2025-09-30T10:00:00Z",
+      "tags": [
+        "#IELTS",
+        "#HọcTập"
+      ],
+      "category": "Giáo dục"
+    }
+  ],
+  "rela": [
+    {
+      "id": 1,
+      "title": "Học React cơ bản trong 7 ngày,học React nâng cao trong 14 ngày",
+      "image": "https://images.pexels.com/photos/842711/pexels-photo-842711.jpeg?cs=srgb&dl=pexels-christian-heitz-285904-842711.jpg&fm=jpg",
+      "summary": "Khóa học tóm tắt những kiến thức cơ bản về React, bao gồm component, state, props và hook, giúp bạn bắt đầu dự án đầu tiên.",
+      "tags": [
+        "React",
+        "Frontend",
+        "JavaScript"
+      ],
+      "publishedAt": "1 ngày trước",
+      "iShot": true
+    },
+    {
+      "id": 2,
+      "title": "Học React nâng cao trong 14 ngày, frontend nâng cao với TypeScript",
+      "image": "https://vcdn1-vnexpress.vnecdn.net/2020/10/22/settop.jpg?w=500&h=300&q=100&dpr=1&fit=crop&s=ugYGBDPnRIG-4ncSgTbwCQ",
+      "summary": "Khóa học nâng cao React với Redux, Context API, và tối ưu hiệu năng ứng dụng.",
+      "tags": [
+        "React",
+        "Redux",
+        "JavaScript"
+      ],
+      "publishedAt": "2 ngày trước",
+      "iShot": "false"
+    },
+    {
+      "id": 3,
+      "title": "JavaScript từ cơ bản đến nâng cao,học React nâng cao trong 14 ngày, frontend nâng cao với TypeScript",
+      "image": "https://i.pinimg.com/736x/dc/43/27/dc4327afb412c1b221f536498d5ff4e1.jpg",
+      "summary": "Học JavaScript cơ bản đến nâng cao, ES6+, async/await và DOM manipulation.",
+      "tags": [
+        "JavaScript",
+        "Frontend"
+      ],
+      "publishedAt": "3 ngày trước",
+      "iShot": "false"
+    },
+    {
+      "id": 4,
+      "title": "Frontend nâng cao với TypeScript,học React nâng cao trong 14 ngày",
+      "image": "https://images2.thanhnien.vn/528068263637045248/2024/1/25/e093e9cfc9027d6a142358d24d2ee350-65a11ac2af785880-17061562929701875684912.jpg",
+      "summary": "Khóa học TypeScript giúp tăng tính maintainable và reduce bug cho ứng dụng frontend.",
+      "tags": [
+        "TypeScript",
+        "Frontend"
+      ],
+      "publishedAt": "4 ngày trước",
+      "iShot": "false"
+    },
+    {
+      "id": 5,
+      "title": "NodeJS cho người mới bắt đầu,học React nâng cao trong 14 ngày",
+      "image": "https://png.pngtree.com/background/20250108/original/pngtree-new-4k-nature-cb-editing-background-pictures-picture-image_15710212.jpg",
+      "summary": "Tìm hiểu NodeJS cơ bản, ExpressJS, API REST và kết nối cơ sở dữ liệu.",
+      "tags": [
+        "NodeJS",
+        "Backend",
+        "JavaScript"
+      ],
+      "publishedAt": "17/17/1012",
+      "iShot": "true"
+    }
+  ],
+  "moiNhat": [
+    {
+      "id": 1,
+      "title": "Học React cơ bản trong 7 ngày,học React nâng cao trong 14 ngày",
+      "image": "https://images.pexels.com/photos/842711/pexels-photo-842711.jpeg?cs=srgb&dl=pexels-christian-heitz-285904-842711.jpg&fm=jpg",
+      "summary": "Khóa học tóm tắt những kiến thức cơ bản về React, bao gồm component, state, props và hook, giúp bạn bắt đầu dự án đầu tiên.",
+      "truong": "Công nghệ",
+      "publishedAt": "1 ngày trước",
+      "iShot": true
+    },
+    {
+      "id": 2,
+      "title": "Học React nâng cao trong 14 ngày, frontend nâng cao với TypeScript",
+      "image": "https://vcdn1-vnexpress.vnecdn.net/2020/10/22/settop.jpg?w=500&h=300&q=100&dpr=1&fit=crop&s=ugYGBDPnRIG-4ncSgTbwCQ",
+      "summary": "Khóa học nâng cao React với Redux, Context API, và tối ưu hiệu năng ứng dụng.",
+      "truong": "Công nghệ",
+      "publishedAt": "2 ngày trước",
+      "iShot": "false"
+    },
+    {
+      "id": 3,
+      "title": "JavaScript từ cơ bản đến nâng cao,học React nâng cao trong 14 ngày, frontend nâng cao với TypeScript",
+      "image": "https://i.pinimg.com/736x/dc/43/27/dc4327afb412c1b221f536498d5ff4e1.jpg",
+      "summary": "Học JavaScript cơ bản đến nâng cao, ES6+, async/await và DOM manipulation.",
+      "truong": "Công nghệ",
+      "publishedAt": "3 ngày trước",
+      "iShot": "false"
+    },
+    {
+      "id": 4,
+      "title": "Frontend nâng cao với TypeScript,học React nâng cao trong 14 ngày",
+      "image": "https://images2.thanhnien.vn/528068263637045248/2024/1/25/e093e9cfc9027d6a142358d24d2ee350-65a11ac2af785880-17061562929701875684912.jpg",
+      "summary": "Khóa học TypeScript giúp tăng tính maintainable và reduce bug cho ứng dụng frontend.",
+      "truong": "Công nghệ",
+      "publishedAt": "4 ngày trước",
+      "iShot": "false"
+    },
+    {
+      "id": 5,
+      "title": "NodeJS cho người mới bắt đầu,học React nâng cao trong 14 ngày",
+      "image": "https://png.pngtree.com/background/20250108/original/pngtree-new-4k-nature-cb-editing-background-pictures-picture-image_15710212.jpg",
+      "summary": "Tìm hiểu NodeJS cơ bản, ExpressJS, API REST và kết nối cơ sở dữ liệu.Tìm hiểu NodeJS cơ bản, ExpressJS, API REST và kết nối cơ sở dữ liệu",
+      "truong": "Công nghệ",
+      "publishedAt": "17/17/1012",
+      "iShot": "true"
+    }
+  ]
+}

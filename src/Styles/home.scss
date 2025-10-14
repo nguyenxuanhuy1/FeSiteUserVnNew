@@ -1,0 +1,38 @@
+.home-pageTutor {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 50px;
+  @media screen and (max-width: 1023px) {
+    gap: 0px;
+  }
+  .home-card-top {
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+
+    .homeCardMain-top {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .homeCardRela-top {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media screen and (max-width: 1023px) {
+      flex-direction: column;
+      gap: 10px;
+
+      .homeCardMain-top,
+      .homeCardRela-top {
+        width: 100%;
+      }
+    }
+  }
+}

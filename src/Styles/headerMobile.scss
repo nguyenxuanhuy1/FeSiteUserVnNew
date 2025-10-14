@@ -1,0 +1,94 @@
+.header-wrapper-mobile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  background-color: white;
+}
+
+.top-menu-header-mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgb(235, 237, 240);
+  background-color: rgb(249, 249, 249);
+  height: 50px;
+  overflow: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+
+  h1 {
+    font-family: "Quicksand", sans-serif;
+    font-size: 26px;
+    color: rgb(0, 161, 255);
+    font-weight: 700;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  &.hide {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  &.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.bottom-menu-header-mobile {
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  background: white;
+  border-bottom: 1px solid #ebedf0;
+  padding: 5px 2px;
+  justify-content: flex-start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+
+  @media screen and (max-width: 1023px) and (min-width: 500px) {
+    justify-content: center !important;
+  }
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.menu-scroll-container {
+  display: flex;
+  gap: 5px;
+  padding: 5px 0;
+  width: max-content;
+  align-items: center;
+}
+
+.btn-menu-mobile {
+  padding: 10px !important;
+  border-radius: 9999px;
+  font-size: 18px;
+  color: #696969;
+  transition: all 0.25s ease;
+  font-weight: 600;
+
+  &:hover {
+    color: rgb(0, 161, 255);
+    background-color: rgba(226, 241, 251, 0.6);
+  }
+
+  &.active {
+    color: rgb(0, 161, 255) !important;
+    background-color: rgba(226, 241, 251, 1) !important;
+  }
+}

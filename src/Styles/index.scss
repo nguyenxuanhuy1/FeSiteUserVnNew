@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import "./headerMobile.scss";
+@import "./home.scss";
+@import "./cardMain.scss";
+@import "./cardRela.scss";
+@import "./cardNormal.scss";
+@import "./detail.scss";
+@import "./footer.scss";
+@import "./newsChung.scss";
