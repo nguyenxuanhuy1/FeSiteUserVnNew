@@ -4,6 +4,9 @@ import MainLayout from '../Layout/Mainlayout';
 const Home = lazy(() => import('../Page/Home/Home'));
 const ThoiSu = lazy(() => import('../Page/Components/Card/NewChung/NewsChung'));
 const Detail = lazy(() => import('../Page/Components/Card/Details/CardDetails'));
+const Login = lazy(() => import('../Page/Components/login'));
+const Register = lazy(() => import('../Page/Components/register/index'));
+const NotFound = lazy(() => import('../Components/DB/NotFound'));
 export interface AppRoute {
   path: string;
   component: React.ComponentType<any>;
@@ -18,6 +21,11 @@ const routes: AppRoute[] = [
     layout: MainLayout,
   },
   {
+    path: BaseUrl.NotFound,
+    component: NotFound,
+    layout: MainLayout,
+  },
+  {
     path: BaseUrl.ThoiSu,
     component: ThoiSu,
     layout: MainLayout,
@@ -27,6 +35,14 @@ const routes: AppRoute[] = [
     component: Detail,
     layout: MainLayout,
   },
+  {
+    path: BaseUrl.Login,
+    component: Login,
+  },
+  {
+    path: BaseUrl.Register,
+    component: Register,
+  }
 ];
 
 export default routes;

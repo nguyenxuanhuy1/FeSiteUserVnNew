@@ -4,7 +4,9 @@ const LinkApi = {
     Detail: `${baseURL}/api/articles/detail/`,
     Rela: `${baseURL}/api/articles/search?`,
     SerachSlug: `${baseURL}/api/articles/search?`,
-    Category: `${baseURL}/api/articles/category`
+    Category: `${baseURL}/api/articles/category`,
+    LayBinhLuan: `${baseURL}/api/comments/`,
+    LinkYT: `${baseURL}/api/link-youtube/list?page=1&size=3`,
 };
 
 export default LinkApi;

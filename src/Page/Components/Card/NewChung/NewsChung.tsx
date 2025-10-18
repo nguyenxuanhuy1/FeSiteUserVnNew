@@ -67,6 +67,7 @@ const NewsChung = () => {
 
       <div style={{ display: 'flex', justifyContent: 'end', marginTop: 20 }}>
         <Pagination
+          className="custom-pagination"
           current={currentPage}
           pageSize={pageSize}
           total={total}

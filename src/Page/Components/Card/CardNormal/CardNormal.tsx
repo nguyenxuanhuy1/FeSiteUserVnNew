@@ -25,6 +25,7 @@ const CardNormal: React.FC<PostCoTotal> = ({
                             </div>
                             <div>
                                 <h3>{item.title}</h3>
+                                <p>{item.shortContent}</p>
                                 <div className="meta">
                                     <div><ClockCircleOutlined /> {getTimeAgo(item.updatedAt)}</div>
                                     <a href="#">Đọc tiếp</a>

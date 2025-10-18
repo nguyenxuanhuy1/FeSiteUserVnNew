@@ -1,4 +1,5 @@
 
+import FloatingContact from "../Page/Components/BtnContact/BtnContac";
 import Footer from "./Footer/Footer";
 import Header from "./index";
 interface LayOutMainProp {
@@ -12,6 +13,7 @@ const MainLayout: React.FC<LayOutMainProp> = ({ children }) => {
           <div> 
             {children}
         </div>
+        <FloatingContact/>
         <Footer/>
     </div>
   );

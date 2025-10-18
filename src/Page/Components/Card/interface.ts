@@ -6,6 +6,7 @@ export interface Post {
   views: number;
   createdAt: any;
   updatedAt: any;
+  shortContent: string
   isFeatured: boolean;
 }
 

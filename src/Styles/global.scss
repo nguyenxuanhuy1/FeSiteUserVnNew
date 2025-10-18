@@ -1,0 +1,13 @@
+@import "variables";
+
+.ant-modal-content {
+  padding: 0 !important;
+  border-radius: 0px !important;
+}
+
+.ant-modal-close {
+  top: 0 !important;
+  right: 0 !important;
+  position: absolute !important;
+  color: $textWhite !important;
+}

@@ -4,7 +4,9 @@ import { DownOutlined } from "@ant-design/icons";
 import { useNavigate, useLocation } from "react-router-dom";
 import { callData } from "../../Api/CallApi";
 import LinkApi from "../../Hook/LinkApi";
-
+import Bgtrongdong from '../../assets/trongdong.png';
+import quochuy from '../../assets/quochuy.png';
+import TrongDongFull from '../../assets/trondongFull.jpg';
 type Category = {
     id: number;
     name: string;
@@ -13,8 +15,8 @@ type Category = {
 const Header = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const [bgUrl, setBgUrl] = useState<string>('');
-    const [bgColor, setBgColor] = useState<string>('white');
+    const [bgUrl, setBgUrl] = useState<string>(Bgtrongdong);
+    const [bgColor, setBgColor] = useState<string>('#981b1e');
 
     const [categories, setCategories] = useState<Category[]>([]);
     const [loading, setLoading] = useState(false);
@@ -62,18 +64,40 @@ const Header = () => {
     };
 
     const hiddenMenu = (
-        <Menu>
+        <Menu
+            style={{
+
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundColor: "#981b1e",
+                borderRadius: "3px",
+                padding: "6px 0",
+                boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+                border: "none",
+                width: "480px",
+            }}
+        >
             {hiddenCategories.map((c) => (
-                <Menu.Item style={{
-                    fontSize: '20px',
-                    fontFamily: "'Nunito Sans', sans-serif",
-                    fontWeight: 500,
-                }} key={c.id} onClick={() => onNavigateCategory(c.id)}>
+                <Menu.Item
+                    key={c.id}
+                    onClick={() => onNavigateCategory(c.id)}
+                    style={{
+                        fontSize: "18px",
+                        fontFamily: "'Nunito Sans', sans-serif",
+                        fontWeight: 500,
+                        color: "white",
+                        padding: "8px 16px",
+                        borderRadius: "6px",
+                        transition: "background-color 0.25s ease",
+                    }}
+                >
                     {c.name}
                 </Menu.Item>
             ))}
         </Menu>
     );
+
 
     return (
         <div
@@ -107,13 +131,13 @@ const Header = () => {
                     margin: "0 auto",
                 }}
             >
-                <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 16 }} onClick={() => navigate("/")}>
+                    <img src={quochuy} alt="Logo" style={{ height: 50 }} />
                     <h1
-                        onClick={() => navigate("/")}
                         style={{
                             fontFamily: "'Quicksand', sans-serif",
                             fontSize: 24,
-                            color: "rgb(0, 161, 255)",
+                            color: "#ffffffff",
                             cursor: "pointer",
                             fontWeight: "600",
                         }}
@@ -127,7 +151,7 @@ const Header = () => {
                         type="text"
                         onClick={() => onNavigateCategory(undefined)}
                         style={{
-                            color: location.pathname === "/" ? "rgb(0, 161, 255)" : "inherit",
+                            color: location.pathname === "/" ? "#ffababff" : "#fff",
                             fontSize: '20px',
                             fontFamily: "'Nunito Sans', sans-serif",
                             fontWeight: 500,
@@ -147,7 +171,7 @@ const Header = () => {
                                     type="text"
                                     onClick={() => onNavigateCategory(cat.id)}
                                     style={{
-                                        color: isActive ? "rgb(0, 161, 255)" : "inherit",
+                                        color: isActive ? "#ffababff" : "#fff",
                                         fontSize: '20px',
                                         fontFamily: "'Nunito Sans', sans-serif",
                                         fontWeight: 500,
@@ -164,8 +188,9 @@ const Header = () => {
                                 fontSize: '20px',
                                 fontFamily: "'Nunito Sans', sans-serif",
                                 fontWeight: 500,
+                                color: 'white'
                             }}>
-                                Xem thêm <DownOutlined />
+                                Xem thêm <DownOutlined style={{fontSize:'10px'}}/>
                             </Button>
                         </Dropdown>
                     )}

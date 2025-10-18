@@ -14,3 +14,47 @@
         padding-top: 50px;
     }
 }
+
+
+.custom-pagination{
+    @media screen and (max-width: 1023px) {
+       margin-right: 5px; 
+    }
+}
+.custom-pagination .ant-pagination-item {
+  border: 1px solid #981b1e !important;
+  color: #981b1e !important;
+}
+
+.custom-pagination .ant-pagination-item a {
+  color: #981b1e !important;
+}
+
+.custom-pagination .ant-pagination-item-active {
+  border-color: #981b1e !important;
+  background-color: #981b1e !important;
+}
+
+.custom-pagination .ant-pagination-item-active a {
+  color: white !important;
+}
+
+.custom-pagination .ant-pagination-item:hover {
+  border-color: #c62828 !important;
+}
+
+.custom-pagination .ant-pagination-item:hover a {
+  color: #c62828 !important;
+}
+
+.custom-pagination .ant-pagination-prev .ant-pagination-item-link,
+.custom-pagination .ant-pagination-next .ant-pagination-item-link {
+  border: 1px solid #981b1e !important;
+  color: #981b1e !important;
+}
+
+.custom-pagination .ant-pagination-prev:hover .ant-pagination-item-link,
+.custom-pagination .ant-pagination-next:hover .ant-pagination-item-link {
+  color: #fff !important;
+  background-color: #981b1e !important;
+}

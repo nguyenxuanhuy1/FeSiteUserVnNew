@@ -4,7 +4,8 @@ import { HomeFilled } from "@ant-design/icons";
 import { useNavigate, useLocation } from "react-router-dom";
 import { callData } from "../../Api/CallApi";
 import LinkApi from "../../Hook/LinkApi";
-
+import Bgtrongdong from '../../assets/trongdong.png'
+import quochuy from '../../assets/quochuy.png'
 type Category = {
   id: number;
   name: string;
@@ -81,8 +82,17 @@ const Header: React.FC = () => {
 
   return (
     <div className="header-wrapper-mobile">
-      <div className={`top-menu-header-mobile ${showLogo ? "show" : "hide"}`}>
-        <h1 onClick={() => navigate("/")}>VNEID NEWS</h1>
+      <div className={`top-menu-header-mobile ${showLogo ? "show" : "hide"}`}
+        style={{
+          display: 'flex', gap: '20px',
+          backgroundColor: "#981b1e",
+          backgroundImage: `url(${Bgtrongdong})`,
+          backgroundPosition:'center'
+        }}
+        onClick={() => navigate("/")}
+        >
+        <img src={quochuy} alt="Logo" style={{ height: 30 }} />
+        <h1 >VNEID NEWS</h1>
       </div>
 
       <div className={`bottom-menu-header-mobile ${isFixed ? "fixed" : ""}`}>

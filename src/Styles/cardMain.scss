@@ -4,10 +4,16 @@
     gap: 16px;
     margin: 0px;
     margin-top: 90px;
+
     @media (max-width: 1023px) {
         margin-top: 0;
         margin-left: 0px;
         padding-top: 0px;
+    }
+
+    @media (width: 1024px) {
+        margin: 5px;
+        margin-top: 90px;
     }
 }
 
@@ -20,18 +26,18 @@
 
 .cardHotItem {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 3px;
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+
     @media (max-width: 1023px) {
         border-radius: 0px !important;
         box-shadow: none;
     }
 
     &:hover {
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
 
         @media (max-width: 1023px) {
             box-shadow: none;
@@ -50,9 +56,11 @@
 .cardHotImage {
     width: 100%;
     height: 450px;
+
     @media screen and (max-width: 767px) {
         height: 30vh;
     }
+
     background-size: cover;
     background-position: center;
     position: relative;
@@ -77,7 +85,7 @@
     position: absolute;
     top: 15px;
     left: 15px;
-    background: #ff4d4f;
+    background: #981b1e;
     color: #fff;
     padding: 4px 8px;
     font-weight: bold;

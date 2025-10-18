@@ -17,6 +17,11 @@
     margin-top: 0 !important;
   }
 
+  @media (width: 1024px) {
+    margin: 0px 5px;
+    margin-top: 90px;
+  }
+
   @media screen and (max-width: 1023px) {
     .header-fixed-padding-detail {
       padding-top: 50px;
@@ -54,7 +59,7 @@
     img {
       max-width: 100%;
       height: auto;
-      border-radius: 8px;
+      border-radius: 3px;
       display: block;
       margin: 16px auto;
       object-fit: cover;
@@ -64,6 +69,7 @@
       font: 400 18px/1.6 "Arial", sans-serif;
       margin-bottom: 18px;
       color: #222;
+      text-align: justify;
     }
   }
 
@@ -75,5 +81,115 @@
       padding-bottom: 0px;
     }
 
+  }
+}
+
+.binhLuan {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.binhLuan textarea {
+  flex: 1;
+  border-radius: 3px;
+  border: 1px solid #d9d9d9;
+  padding: 8px 12px;
+  font-size: 15px;
+  resize: none;
+  transition: all 0.3s ease;
+}
+
+.binhLuan textarea:focus {
+  border-color: #981b1e;
+  box-shadow: 0 0 4px rgba(152, 27, 30, 0.3);
+  outline: none;
+}
+
+.btn-submit-binhluan {
+  background-color: #981b1e;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 6px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 40px;
+
+  &:active {
+    transform: scale(0.98) !important;
+  }
+}
+
+.btn-submit-binhluan:hover {
+  background-color: #b92b2f !important;
+  box-shadow: 0 2px 6px rgba(152, 27, 30, 0.3) !important;
+  border-color: #981b1e !important;
+}
+
+
+.ds-binhluan {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  .item-binhluan {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: #fafafa;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+
+    .avatar-binhluan {
+      background-color: #981b1e;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .noi-dung-binhluan {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .thongtin-binhluan {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        margin-bottom: 4px;
+        gap: 5px;
+
+        .ten-tacgia {
+          font-weight: 600;
+          color: #333;
+          margin: 0;
+          font-size: 15px;
+        }
+
+        .thoigian-binhluan {
+          color: #999;
+          font-size: 10px;
+        }
+      }
+
+      .noidung-binhluan {
+        margin: 0;
+        color: #222;
+        line-height: 1.5;
+        font-size: 15px;
+      }
+    }
+  }
+
+  .chuacobinhluan {
+    text-align: center;
+    color: #999;
+    font-style: italic;
   }
 }

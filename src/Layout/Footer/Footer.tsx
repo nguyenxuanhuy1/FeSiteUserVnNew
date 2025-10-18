@@ -1,21 +1,39 @@
-import { FacebookFilled, RightOutlined, TikTokFilled, TwitterOutlined, YoutubeFilled } from "@ant-design/icons";
-
+import { FacebookFilled, TikTokFilled, TwitterOutlined, YoutubeFilled } from "@ant-design/icons";
+import Bgtrongdong from '../../assets/trongdong.png';
+import quochuy from '../../assets/quochuy.png';
+import { useNavigate } from "react-router-dom";
 const Footer = () => {
+  const navigate = useNavigate();
   return (
-    <footer className="footer">
+    <footer className="footer" style={{
+      backgroundColor: "#981b1e",
+      backgroundImage: `url(${Bgtrongdong})`,
+      backgroundPosition: 'center'
+    }}>
       <div className="footer-container">
-        {/* Cột 1 */}
+
         <div className="footer-column">
-          <h4>Về ModernNews</h4>
+          <div style={{ display: "flex", alignItems: "center", gap: 16 }} onClick={() => navigate("/")}>
+            <img src={quochuy} alt="Logo" style={{ height: 50 }} />
+            <h1
+              style={{
+                fontFamily: "'Quicksand', sans-serif",
+                fontSize: 24,
+                color: "#ffffffff",
+                cursor: "pointer",
+                fontWeight: "600",
+              }}
+            >
+              VNEID NEWS
+            </h1>
+          </div>
           <div className="social-icons">
             <a href="#"><div className="icon"><FacebookFilled /></div></a>
-            <a href="#"><div className="icon"><TwitterOutlined /></div></a>
-            <a href="#"><div className="icon"><YoutubeFilled /></div></a>
-            <a href="#"><div className="icon"><TikTokFilled /></div></a>
+            <a href="#"><div className="icon"><YoutubeFilled style={{ color: 'red' }} /></div></a>
+            <a href="#"><div className="icon"><TikTokFilled style={{ color: 'black' }} /></div></a>
           </div>
         </div>
 
-        {/* Cột 2 */}
         <div className="footer-column">
           <h4>Liên kết nhanh</h4>
           <ul>
@@ -25,7 +43,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Cột 3 */}
         <div className="footer-column">
           <h4>Danh mục</h4>
           <ul>
@@ -35,7 +52,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Cột 4 */}
         <div className="footer-column">
           <h4>Hỗ trợ</h4>
           <ul>

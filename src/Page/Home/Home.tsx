@@ -5,25 +5,23 @@ import CardHot from "../Components/Card/CardHot/CardHot";
 import CardRela from "../Components/Card/CardRela/CardRela";
 import { Post } from '../Components/Card/interface';
 import CardNormal from '../Components/Card/CardNormal/CardNormal';
-import ErrorCard from '../../Components/Err/ErrCallData';
-import { Divider } from 'antd';
+import VideoList from '../Components/Card/CardVideo/CardVideo';
+import LienKet from '../Components/Card/CardLienKet/LienKet';
 const Home = () => {
     const [data, setData] = useState<Post[]>([]);
     const [newsData, setNewsData] = useState<Post[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
-    const [error, setError] = useState<boolean>(false);
-
-
+    
     useEffect(() => {
         const fetchNewClass = async () => {
             setLoading(true);
             try {
                 const res = await callData({
-                    url: `${LinkApi.NoiBat}?categoryId=${2}&page=1&size=5`
+                    url: `${LinkApi.NoiBat}?categoryId=${1}&page=1&size=5`
                 });
                 setData(res.data.data);
             } catch (err: any) {
-                setError(true);
+
             } finally {
                 setLoading(false);
             }
@@ -37,11 +35,11 @@ const Home = () => {
             setLoading(true);
             try {
                 const res = await callData({
-                    url: `${LinkApi.SerachSlug}&page=${1}&size=${24}`,
+                    url: `${LinkApi.NoiBat}?categoryId=${2}&page=1&size=16`,
                 });
                 setNewsData(res.data.data);
             } catch (err: any) {
-                setError(true);
+
             } finally {
                 setLoading(false);
             }
@@ -52,7 +50,7 @@ const Home = () => {
 
     const hotPosts = data.filter((post) => post.isFeatured === true);
     const relaPosts = data.filter((post) => post.isFeatured !== true);
-    if (error) return <ErrorCard />;
+
 
 
     return (
@@ -65,18 +63,28 @@ const Home = () => {
                     <CardRela posts={relaPosts} loading={loading} />
                 </div>
             </div>
+            <div className="home-card-center">
+                <div className="section-header-tinmoinhat">
+                    <div className="label">VIDEO</div>
+                </div>
+                <VideoList />
+            </div>
             <div className="home-card-bottom">
-
                 <div>
-                    <Divider style={{ color: 'rgb(0, 161, 255)', fontSize: '22px' }}>TIN MỚI NHẤT</Divider>
+                    <div className="section-header-tinmoinhat">
+                        <div className="label">TIN MỚI NHẤT</div>
+                    </div>
                     <CardNormal
                         data={newsData}
                         loading={loading}
                     />
                 </div>
-                <div>
-
+            </div>
+            <div>
+                <div className="section-header-tinmoinhat">
+                    <div className="label">LIÊN KẾT</div>
                 </div>
+                <LienKet />
             </div>
         </div>
     )
