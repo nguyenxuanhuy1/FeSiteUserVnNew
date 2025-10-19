@@ -5,9 +5,11 @@
   flex-direction: column;
   gap: 40px;
   padding-bottom: 50px;
+
   @media screen and (max-width: 1023px) {
     gap: 0px;
   }
+
   .home-card-top {
     display: flex;
     gap: 10px;
@@ -36,21 +38,56 @@
     }
   }
 }
+
 .section-header-tinmoinhat {
   display: flex;
   align-items: center;
-  background-color: #f2f2f2; 
+  background-color: #f2f2f2;
   height: 40px;
   position: relative;
   margin: 20px 0px;
+  justify-content: space-between;
+
   @media screen and (max-width: 1023px) {
     margin: 5px;
     margin-top: 20px;
   }
 }
 
+.xemThem {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+  @media screen and (max-width: 1023px) {
+    margin-right: 10px;
+  }
+  font-weight: 600;
+  color: #981b1e;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px ;
+    background-color: #981b1e;
+    transition: width 0.4s ease;
+  }
+
+  &:hover {
+    color: #981b1e;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
 .label {
-  background-color: #981b1e; 
+  background-color: #981b1e;
   font-weight: bold;
   padding: 0 20px;
   height: 40px;

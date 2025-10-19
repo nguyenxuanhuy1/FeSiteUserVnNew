@@ -1,19 +1,35 @@
-import { Divider, Empty, Pagination } from 'antd';
+import { Divider, Empty, Pagination, Skeleton } from 'antd';
 import { ClockCircleOutlined } from '@ant-design/icons';
 import React from 'react';
-import { Post, PostCoTotal } from '../interface';
+import { PostCoTotal } from '../interface';
 import { getTimeAgo } from '../../tinhTime';
 import { useNavigate } from "react-router-dom";
 
 const CardNormal: React.FC<PostCoTotal> = ({
     data,
-
+    loading,
 }) => {
     const navigate = useNavigate();
     const GetSlug = (slug: String) => {
         navigate(`/bai-viet/${slug}`);
     };
     const hasItems = Array.isArray(data) && data.length > 0;
+
+    if (loading) {
+        return (
+            <div className="card-normal">
+                {[1, 2, 3].map((i) => (
+                    <div key={i} className="card-skeleton-nm">
+                        <Skeleton.Image style={{ width: 200, height: 120 }} active />
+                        <div style={{ flex: 1 }}>
+                            <Skeleton active paragraph={{ rows: 2 }} title />
+                        </div>
+                    </div>
+                ))}
+            </div>
+        );
+    }
+
     return (
         <div>
             <div className="card-normal">
@@ -34,7 +50,7 @@ const CardNormal: React.FC<PostCoTotal> = ({
                         </div>
                     ))
                 ) : (
-                    <div style={{ padding: 24, width: '100%', textAlign: 'center', margin:'auto' }}>
+                    <div style={{ padding: 24, width: '100%', textAlign: 'center', margin: 'auto' }}>
                         <Empty description="Không có bài viết" />
                     </div>
                 )}
