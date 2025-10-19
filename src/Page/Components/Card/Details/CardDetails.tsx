@@ -114,7 +114,7 @@ const CardDetails = () => {
                 setOpenNotification(true);
             }
         } catch (error: any) {
-            setNotificationMessage(error.response?.data?.error || error.error || "Gửi bình luận thất bại.");
+            setNotificationMessage(error.response?.data?.error || error?.error || "Gửi bình luận thất bại.");
             setOpenNotification(true);
         } finally {
             setLoading1(false);
@@ -205,9 +205,9 @@ const CardDetails = () => {
 
                 </div>
             </div>
-            <div>
+            <div className="detailRela">
                 <br />
-                <CardRela posts={dataRela} loading={loading} />
+                <CardRela posts={dataRela} loading={loading}/>
             </div>
 
             <ModalSection
