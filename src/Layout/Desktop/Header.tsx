@@ -103,7 +103,7 @@ const Header = () => {
                     alignItems: "center",
                     justifyContent: "space-between",
                     width: "100%",
-                    maxWidth: 1400,
+                    maxWidth: 1200,
                     margin: "0 auto",
                 }}
             >
@@ -128,7 +128,7 @@ const Header = () => {
                         onClick={() => onNavigateCategory(undefined)}
                         style={{
                             color: location.pathname === "/" ? "rgb(0, 161, 255)" : "inherit",
-                            fontSize: '14px',
+                            fontSize: '20px',
                             fontFamily: "'Nunito Sans', sans-serif",
                             fontWeight: 500,
                         }}
@@ -148,7 +148,7 @@ const Header = () => {
                                     onClick={() => onNavigateCategory(cat.id)}
                                     style={{
                                         color: isActive ? "rgb(0, 161, 255)" : "inherit",
-                                        fontSize: '14px',
+                                        fontSize: '20px',
                                         fontFamily: "'Nunito Sans', sans-serif",
                                         fontWeight: 500,
                                     }}
@@ -158,17 +158,17 @@ const Header = () => {
                             );
                         })}
 
-                    {/* {hiddenCategories.length > 0 && (Fsize=24
+                    {hiddenCategories.length > 0 && (
                         <Dropdown overlay={hiddenMenu} trigger={['click']} overlayStyle={{ zIndex: 9999 }}>
                             <Button type="text" style={{
-                                fontSize: '14px',
+                                fontSize: '20px',
                                 fontFamily: "'Nunito Sans', sans-serif",
                                 fontWeight: 500,
                             }}>
                                 Xem thêm <DownOutlined />
                             </Button>
                         </Dropdown>
-                    )} */}
+                    )}
                 </div>
             </div>
         </div>

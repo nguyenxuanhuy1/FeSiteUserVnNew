@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="footer-container">
         {/* Cột 1 */}
         <div className="footer-column">
-          <h4>VNEID NEWS</h4>
+          <h4>Về ModernNews</h4>
           <div className="social-icons">
             <a href="#"><div className="icon"><FacebookFilled /></div></a>
             <a href="#"><div className="icon"><TwitterOutlined /></div></a>
