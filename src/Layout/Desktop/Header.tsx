@@ -9,8 +9,8 @@ import quochuy from '../../assets/quochuy.png';
 import TrongDongFull from '../../assets/trondongFull.jpg';
 import Avatar from "antd/es/avatar/Avatar";
 type Category = {
-    id: number;
-    name: string;
+  id: number;
+  name: string;
 };
 
 const Header = () => {
@@ -66,136 +66,144 @@ const Header = () => {
         fetchCategories();
     }, []);
 
-    const visibleCount = 2;
-    const visibleCategories = categories.slice(0, visibleCount);
-    const hiddenCategories = categories.slice(visibleCount);
+  const visibleCount = 2;
+  const visibleCategories = categories.slice(0, visibleCount);
+  const hiddenCategories = categories.slice(visibleCount);
 
-    const onNavigateCategory = (id?: number) => {
-        if (!id) {
-            navigate("/");
-            return;
-        }
-        navigate(`/category/${id}`);
-    };
+  const onNavigateCategory = (id?: number) => {
+    if (!id) {
+      navigate("/");
+      return;
+    }
+    navigate(`/category/${id}`);
+  };
 
-    const hiddenMenu = (
-        <Menu
-            style={{
-
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                backgroundColor: "#981b1e",
-                borderRadius: "3px",
-                padding: "6px 0",
-                boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
-                border: "none",
-                width: "480px",
-            }}
+  const hiddenMenu = (
+    <Menu
+      style={{
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundColor: "#981b1e",
+        borderRadius: "3px",
+        padding: "6px 0",
+        boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+        border: "none",
+        width: "480px",
+      }}
+    >
+      {hiddenCategories.map((c) => (
+        <Menu.Item
+          key={c.id}
+          onClick={() => onNavigateCategory(c.id)}
+          style={{
+            fontSize: "18px",
+            fontFamily: "'Nunito Sans', sans-serif",
+            fontWeight: 500,
+            color: "white",
+            padding: "8px 16px",
+            borderRadius: "6px",
+            transition: "background-color 0.25s ease",
+          }}
         >
-            {hiddenCategories.map((c) => (
-                <Menu.Item
-                    key={c.id}
-                    onClick={() => onNavigateCategory(c.id)}
-                    style={{
-                        fontSize: "18px",
-                        fontFamily: "'Nunito Sans', sans-serif",
-                        fontWeight: 500,
-                        color: "white",
-                        padding: "8px 16px",
-                        borderRadius: "6px",
-                        transition: "background-color 0.25s ease",
-                    }}
-                >
-                    {c.name}
-                </Menu.Item>
-            ))}
-        </Menu>
-    );
+          {c.name}
+        </Menu.Item>
+      ))}
+    </Menu>
+  );
 
-
-    return (
+  return (
+    <div
+      className="headerDesktop"
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        padding: "0 24px",
+        height: 70,
+        backgroundColor: bgColor,
+        backgroundImage: bgUrl ? `url(${bgUrl})` : "none",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        transition: "background 0.5s ease",
+        boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 2000,
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          width: "100%",
+          maxWidth: 1200,
+          margin: "0 auto",
+        }}
+      >
         <div
-            className="headerDesktop"
-            style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                padding: "0 24px",
-                height: 70,
-                backgroundColor: bgColor,
-                backgroundImage: bgUrl ? `url(${bgUrl})` : 'none',
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                transition: "background 0.5s ease",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                right: 0,
-                zIndex: 2000,
-            }}
+          style={{ display: "flex", alignItems: "center", gap: 16 }}
+          onClick={() => navigate("/")}
         >
-            <div
-                style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    width: "100%",
-                    maxWidth: 1200,
-                    margin: "0 auto",
-                }}
-            >
-                <div style={{ display: "flex", alignItems: "center", gap: 16 }} onClick={() => navigate("/")}>
-                    <img src={quochuy} alt="Logo" style={{ height: 50 }} />
-                    <h1
-                        style={{
-                            fontFamily: "'Quicksand', sans-serif",
-                            fontSize: 24,
-                            color: "#ffffffff",
-                            cursor: "pointer",
-                            fontWeight: "600",
-                        }}
-                    >
-                        VNEID NEWS
-                    </h1>
-                </div>
+          <img src={quochuy} alt="Logo" style={{ height: 50 }} />
+          <h1
+            style={{
+              fontFamily: "'Quicksand', sans-serif",
+              fontSize: 24,
+              color: "#ffffffff",
+              cursor: "pointer",
+              fontWeight: "600",
+            }}
+          >
+            VNEID NEWS
+          </h1>
+        </div>
 
-                <div style={{ display: "flex", justifyContent: "center", gap: 24, alignItems: 'center' }}>
-                    <Button
-                        type="text"
-                        onClick={() => onNavigateCategory(undefined)}
-                        style={{
-                            color: location.pathname === "/" ? "#ffababff" : "#fff",
-                            fontSize: '20px',
-                            fontFamily: "'Nunito Sans', sans-serif",
-                            fontWeight: 500,
-                        }}
-                    >
-                        Trang chủ
-                    </Button>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: 24,
+            alignItems: "center",
+          }}
+        >
+          <Button
+            type="text"
+            onClick={() => onNavigateCategory(undefined)}
+            style={{
+              color: location.pathname === "/" ? "#ffababff" : "#fff",
+              fontSize: "20px",
+              fontFamily: "'Nunito Sans', sans-serif",
+              fontWeight: 500,
+            }}
+          >
+            Trang chủ
+          </Button>
 
-                    {!loading &&
-                        visibleCategories.map((cat) => {
-                            const isActive =
-                                location.pathname === `/category/${cat.id}` ||
-                                location.pathname.startsWith(`/category/${cat.id}/`);
-                            return (
-                                <Button
-                                    key={cat.id}
-                                    type="text"
-                                    onClick={() => onNavigateCategory(cat.id)}
-                                    style={{
-                                        color: isActive ? "#ffababff" : "#fff",
-                                        fontSize: '20px',
-                                        fontFamily: "'Nunito Sans', sans-serif",
-                                        fontWeight: 500,
-                                    }}
-                                >
-                                    {cat.name}
-                                </Button>
-                            );
-                        })}
+          {!loading &&
+            visibleCategories.map((cat) => {
+              const isActive =
+                location.pathname === `/category/${cat.id}` ||
+                location.pathname.startsWith(`/category/${cat.id}/`);
+              return (
+                <Button
+                  key={cat.id}
+                  type="text"
+                  onClick={() => onNavigateCategory(cat.id)}
+                  style={{
+                    color: isActive ? "#ffababff" : "#fff",
+                    fontSize: "20px",
+                    fontFamily: "'Nunito Sans', sans-serif",
+                    fontWeight: 500,
+                  }}
+                >
+                  {cat.name}
+                </Button>
+              );
+            })}
 
                     {hiddenCategories.length > 0 && (
                         <Dropdown overlay={hiddenMenu} trigger={['click']} overlayStyle={{ zIndex: 9999 }}>

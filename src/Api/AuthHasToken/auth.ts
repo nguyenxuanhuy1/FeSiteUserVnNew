@@ -19,5 +19,9 @@ export const guiBinhLuan = async (id: number | string, body: any) => {
   const res = await axiosInstance.post(`/api/comments/${id}`, body);
   return res;
 };
-
-  
+export const deleteBinhLuan = async (commentId: number) => {
+  const res = await axiosInstance.post(`/api/comments/delete`, {
+    commentId: commentId,
+  });
+  return res;
+};
