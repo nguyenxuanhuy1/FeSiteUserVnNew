@@ -6,7 +6,6 @@ import { callData } from "../../Api/CallApi";
 import LinkApi from "../../Hook/LinkApi";
 import Bgtrongdong from "../../assets/trongdong.png";
 import quochuy from "../../assets/quochuy.png";
-import TrongDongFull from "../../assets/trondongFull.jpg";
 type Category = {
   id: number;
   name: string;

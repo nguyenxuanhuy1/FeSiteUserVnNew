@@ -38,7 +38,6 @@ const CardDetails = () => {
   const [loading1, setLoading1] = useState(false);
   const [binhLuan, setBinhLuan] = useState([]);
   const [userInfo, setUserInfo] = useState<any>(null);
-  console.log("userInfo", userInfo);
 
   useEffect(() => {
     const role = localStorage.getItem("role");
