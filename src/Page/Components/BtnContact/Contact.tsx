@@ -4,11 +4,11 @@ import { MessageOutlined, PhoneOutlined, FacebookFilled } from "@ant-design/icon
 const Contact: React.FC = () => {
   return (
     <div className="contact-menu">
-      <a href="tel:0987654321" className="contact-item">
+      <a href="tel:19000368" className="contact-item">
         <div className="contact-circle">
           <PhoneOutlined />
         </div>
-        <span>0987654321</span>
+        <span>19000368</span>
       </a>
     </div>
   );

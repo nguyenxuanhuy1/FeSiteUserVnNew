@@ -7,6 +7,7 @@ const LinkApi = {
     Category: `${baseURL}/api/articles/category`,
     LayBinhLuan: `${baseURL}/api/comments/`,
     LinkYT: `${baseURL}/api/link-youtube/list?page=1&size=3`,
+    LinkYTVideo: `${baseURL}/api/link-youtube/list?`,
 };
 
 export default LinkApi;

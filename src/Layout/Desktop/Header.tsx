@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Button, Dropdown, Menu } from "antd";
-import { DownOutlined } from "@ant-design/icons";
+import { DownOutlined, UserOutlined } from "@ant-design/icons";
 import { useNavigate, useLocation } from "react-router-dom";
 import { callData } from "../../Api/CallApi";
 import LinkApi from "../../Hook/LinkApi";
 import Bgtrongdong from '../../assets/trongdong.png';
 import quochuy from '../../assets/quochuy.png';
 import TrongDongFull from '../../assets/trondongFull.jpg';
+import Avatar from "antd/es/avatar/Avatar";
 type Category = {
     id: number;
     name: string;
@@ -17,10 +18,24 @@ const Header = () => {
     const location = useLocation();
     const [bgUrl, setBgUrl] = useState<string>(Bgtrongdong);
     const [bgColor, setBgColor] = useState<string>('#981b1e');
-
+    const accessToken = localStorage.getItem("accessToken");
     const [categories, setCategories] = useState<Category[]>([]);
     const [loading, setLoading] = useState(false);
-
+    const handleLogout = () => {
+        localStorage.clear();
+        navigate("/login");
+    };
+    const menu = (
+        <Menu
+            items={[
+                {
+                    key: "logout",
+                    label: "Đăng xuất",
+                    onClick: handleLogout,
+                },
+            ]}
+        />
+    );
     useEffect(() => {
         const fetchCategories = async () => {
             setLoading(true);
@@ -190,10 +205,34 @@ const Header = () => {
                                 fontWeight: 500,
                                 color: 'white'
                             }}>
-                                Xem thêm <DownOutlined style={{fontSize:'10px'}}/>
+                                Xem thêm <DownOutlined style={{ fontSize: '10px' }} />
                             </Button>
                         </Dropdown>
                     )}
+
+                    {
+                        accessToken ? (
+                            <Dropdown overlay={menu} placement="bottomRight" arrow overlayStyle={{ zIndex: 9999 }} trigger={['click']}>
+                                <Avatar
+                                    src={<UserOutlined />}
+                                    style={{
+                                        cursor: "pointer", color: '#981b1e',
+                                        backgroundColor: '#fff',
+                                    }}
+                                />
+                            </Dropdown>
+                        ) : (
+                            <Avatar
+                                src={<UserOutlined />}
+                                style={{
+                                    cursor: "pointer", 
+                                    color: '#981b1e',
+                                    backgroundColor: '#fff',
+                                }}
+                                onClick={() => navigate("/login")}
+                            />
+                        )
+                    }
                 </div>
             </div>
         </div>

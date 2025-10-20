@@ -28,9 +28,36 @@ const Footer = () => {
             </h1>
           </div>
           <div className="social-icons">
-            <a href="#"><div className="icon"><FacebookFilled /></div></a>
-            <a href="#"><div className="icon"><YoutubeFilled style={{ color: 'red' }} /></div></a>
-            <a href="#"><div className="icon"><TikTokFilled style={{ color: 'black' }} /></div></a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61574576751253"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="icon">
+                <FacebookFilled />
+              </div>
+            </a>
+
+            <a
+              href="https://www.youtube.com/@VNeIDSupport"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="icon">
+                <YoutubeFilled style={{ color: 'red' }} />
+              </div>
+            </a>
+
+            <a
+              href="https://www.tiktok.com/@vneid.support"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="icon">
+                <TikTokFilled style={{ color: 'black' }} />
+              </div>
+            </a>
+
           </div>
         </div>
 

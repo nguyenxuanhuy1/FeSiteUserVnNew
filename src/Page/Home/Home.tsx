@@ -85,6 +85,7 @@ const Home = () => {
             <div className="home-card-center">
                 <div className="section-header-tinmoinhat">
                     <div className="label">VIDEO</div>
+                    <div className='xemThem' onClick={() => { navigate('/video') }} ><CaretRightFilled /> Xem thêm</div>
                 </div>
                 <VideoList />
             </div>

@@ -8,12 +8,30 @@
 
 .top-menu-header-mobile {
   display: flex;
-  justify-content: center;
   align-items: center;
   border-bottom: 1px solid rgb(235, 237, 240);
   height: 60px;
   overflow: hidden;
   transition: transform 0.3s ease, opacity 0.3s ease;
+  position: relative;
+  justify-content: center;
+
+  .menu-icon {
+    position: absolute;
+    left: 10px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .logo-mobile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    justify-content: center;
+  }
 
   h1 {
     font-family: "Quicksand", sans-serif;

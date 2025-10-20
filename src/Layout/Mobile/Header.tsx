@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "antd";
-import { HomeFilled } from "@ant-design/icons";
+import { Button, Drawer } from "antd";
+import { BarsOutlined, HomeFilled, LoginOutlined, LogoutOutlined } from "@ant-design/icons";
 import { useNavigate, useLocation } from "react-router-dom";
 import { callData } from "../../Api/CallApi";
 import LinkApi from "../../Hook/LinkApi";
@@ -80,6 +80,21 @@ const Header: React.FC = () => {
     navigate(`/category/${id}`);
   };
 
+  const [open, setOpen] = useState(false);
+  const accessToken = localStorage.getItem("accessToken");
+  const showDrawer = () => setOpen(true);
+  const closeDrawer = () => setOpen(false);
+
+  const handleAction = () => {
+    if (accessToken) {
+      localStorage.clear();
+      closeDrawer();
+      navigate("/login");
+    } else {
+      closeDrawer();
+      navigate("/login");
+    }
+  };
   return (
     <div className="header-wrapper-mobile">
       <div className={`top-menu-header-mobile ${showLogo ? "show" : "hide"}`}
@@ -87,12 +102,17 @@ const Header: React.FC = () => {
           display: 'flex', gap: '20px',
           backgroundColor: "#981b1e",
           backgroundImage: `url(${Bgtrongdong})`,
-          backgroundPosition:'center'
+          backgroundPosition: 'center'
         }}
         onClick={() => navigate("/")}
-        >
-        <img src={quochuy} alt="Logo" style={{ height: 30 }} />
-        <h1 >VNEID NEWS</h1>
+      >
+        <div className="menu-icon" onClick={showDrawer}>
+          <BarsOutlined />
+        </div>
+        <div style={{ display: 'flex', gap: '10px' }} className="logo-mobile">
+          <img src={quochuy} alt="Logo" style={{ height: 30 }} />
+          <h1 >VNEID NEWS</h1>
+        </div>
       </div>
 
       <div className={`bottom-menu-header-mobile ${isFixed ? "fixed" : ""}`}>
@@ -125,6 +145,43 @@ const Header: React.FC = () => {
             })}
         </div>
       </div>
+      <Drawer
+        placement="bottom"
+        onClose={closeDrawer}
+        open={open}
+        bodyStyle={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%", backgroundColor: '#981b1e', backgroundImage: `url(${Bgtrongdong})`, backgroundPosition: 'center' }}
+        height={100}
+        closable={false}
+        style={{ borderRadius: '10px 10px 0px 0px' }}
+      >
+        <div
+          onClick={handleAction}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
+            cursor: "pointer",
+            background: "rgba(255,255,255,0.1)",
+            color: "#fff",
+            padding: "12px 20px",
+            borderRadius: "8px",
+            fontSize: "16px",
+            transition: "0.3s",
+          }}
+        >
+          {accessToken ? (
+            <>
+              <LogoutOutlined />
+              <span style={{fontWeight:'bold'}}>ĐĂNG XUẤT</span>
+            </>
+          ) : (
+            <>
+              <LoginOutlined />
+              <span style={{fontWeight:'bold'}}>ĐĂNG NHẬP</span>
+            </>
+          )}
+        </div>
+      </Drawer>
     </div>
   );
 };
