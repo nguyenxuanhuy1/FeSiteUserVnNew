@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Button, Dropdown, Menu } from "antd";
-import { DownOutlined, UserOutlined } from "@ant-design/icons";
+import { BarsOutlined, DownOutlined, UserOutlined } from "@ant-design/icons";
 import { useNavigate, useLocation } from "react-router-dom";
 import { callData } from "../../Api/CallApi";
 import LinkApi from "../../Hook/LinkApi";
 import Bgtrongdong from '../../assets/trongdong.png';
 import quochuy from '../../assets/quochuy.png';
-import TrongDongFull from '../../assets/trondongFull.jpg';
 import Avatar from "antd/es/avatar/Avatar";
 type Category = {
   id: number;
@@ -66,7 +65,7 @@ const Header = () => {
         fetchCategories();
     }, []);
 
-  const visibleCount = 2;
+  const visibleCount = 6;
   const visibleCategories = categories.slice(0, visibleCount);
   const hiddenCategories = categories.slice(visibleCount);
 
@@ -170,18 +169,6 @@ const Header = () => {
             alignItems: "center",
           }}
         >
-          <Button
-            type="text"
-            onClick={() => onNavigateCategory(undefined)}
-            style={{
-              color: location.pathname === "/" ? "#ffababff" : "#fff",
-              fontSize: "20px",
-              fontFamily: "'Nunito Sans', sans-serif",
-              fontWeight: 500,
-            }}
-          >
-            Trang chủ
-          </Button>
 
           {!loading &&
             visibleCategories.map((cat) => {
@@ -213,7 +200,7 @@ const Header = () => {
                                 fontWeight: 500,
                                 color: 'white'
                             }}>
-                                Xem thêm <DownOutlined style={{ fontSize: '10px' }} />
+                                <BarsOutlined style={{ fontSize: '20px' }} />
                             </Button>
                         </Dropdown>
                     )}

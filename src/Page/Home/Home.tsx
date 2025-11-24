@@ -13,6 +13,8 @@ const Home = () => {
     const [data, setData] = useState<Post[]>([]);
     const [newsData, setNewsData] = useState<Post[]>([]);
     const [newsThoiSu, setNewsThoiSu] = useState<Post[]>([]);
+    const [newsCongNghe, setNewsCongNghe] = useState<Post[]>([]);
+    const [newsGiaiTri, setNewsGiaiTri] = useState<Post[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
     const navigate = useNavigate();
     useEffect(() => {
@@ -58,6 +60,40 @@ const Home = () => {
                     url: `${LinkApi.NoiBat}?categoryId=${3}&page=1&size=16`,
                 });
                 setNewsThoiSu(res.data.data);
+            } catch (err: any) {
+
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchNewClass();
+    }, []);
+
+    useEffect(() => {
+        const fetchNewClass = async () => {
+            setLoading(true);
+            try {
+                const res = await callData({
+                    url: `${LinkApi.NoiBat}?categoryId=${4}&page=1&size=16`,
+                });
+                setNewsCongNghe(res.data.data);
+            } catch (err: any) {
+
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchNewClass();
+    }, []);
+
+    useEffect(() => {
+        const fetchNewClass = async () => {
+            setLoading(true);
+            try {
+                const res = await callData({
+                    url: `${LinkApi.NoiBat}?categoryId=${5}&page=1&size=16`,
+                });
+                setNewsGiaiTri(res.data.data);
             } catch (err: any) {
 
             } finally {
@@ -113,12 +149,40 @@ const Home = () => {
                     />
                 </div>
             </div>
+
+            <div className="home-card-bottom">
+                <div>
+                    <div className="section-header-tinmoinhat">
+                        <div className="label">CÔNG NGHỆ</div>
+                        <div className='xemThem' onClick={() => { navigate('/category/4') }} ><CaretRightFilled /> Xem thêm</div>
+                    </div>
+                    <CardNormal
+                        data={newsCongNghe}
+                        loading={loading}
+                    />
+                </div>
+            </div>
+
+            <div className="home-card-bottom">
+                <div>
+                    <div className="section-header-tinmoinhat">
+                        <div className="label">GIẢI TRÍ</div>
+                        <div className='xemThem' onClick={() => { navigate('/category/5') }} ><CaretRightFilled /> Xem thêm</div>
+                    </div>
+                    <CardNormal
+                        data={newsGiaiTri}
+                        loading={loading}
+                    />
+                </div>
+            </div>
+
             <div>
                 <div className="section-header-tinmoinhat">
                     <div className="label">LIÊN KẾT</div>
                 </div>
                 <LienKet />
             </div>
+
         </div>
     )
 

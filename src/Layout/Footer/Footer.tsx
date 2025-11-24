@@ -1,4 +1,4 @@
-import { FacebookFilled, TikTokFilled, TwitterOutlined, YoutubeFilled } from "@ant-design/icons";
+import { FacebookFilled, PhoneFilled, PhoneOutlined, TikTokFilled, TwitterOutlined, YoutubeFilled } from "@ant-design/icons";
 import Bgtrongdong from '../../assets/trongdong.png';
 import quochuy from '../../assets/quochuy.png';
 import { useNavigate } from "react-router-dom";
@@ -82,9 +82,7 @@ const Footer = () => {
         <div className="footer-column">
           <h4>Hỗ trợ</h4>
           <ul>
-            <li><a href="#">Liên hệ</a></li>
-            <li><a href="#">Giới thiệu</a></li>
-            <li><a href="#">Điều khoản</a></li>
+            <li><a href="tel:19000368"><PhoneOutlined/> 19000368</a></li>
           </ul>
         </div>
       </div>
