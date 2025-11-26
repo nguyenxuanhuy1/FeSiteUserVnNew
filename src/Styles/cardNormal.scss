@@ -1,14 +1,15 @@
 .card-normal {
     display: grid;
     gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
 
     @media screen and (max-width: 1023px) {
         padding: 5px;
     }
+
     @media (width: 1024px) {
         margin: 5px;
     }
-    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
 
     >div {
         background-color: #fff;
@@ -120,3 +121,12 @@
     }
 }
 
+.card-normal .empty-center {
+    grid-column: 1 / -1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    background-color: #F5F7FA;
+    box-shadow: none !important;
+}

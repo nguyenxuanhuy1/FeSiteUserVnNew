@@ -50,7 +50,7 @@ const CardNormal: React.FC<PostCoTotal> = ({
                         </div>
                     ))
                 ) : (
-                    <div style={{ padding: 24, width: '100%', textAlign: 'center', margin: 'auto' }}>
+                    <div className="empty-center">
                         <Empty description="Không có bài viết" />
                     </div>
                 )}
