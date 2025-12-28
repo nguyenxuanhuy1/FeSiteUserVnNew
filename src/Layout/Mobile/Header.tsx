@@ -110,8 +110,7 @@ const Header: React.FC = () => {
           <BarsOutlined />
         </div>
         <div style={{ display: 'flex', gap: '10px' }} className="logo-mobile">
-          <img src={quochuy} alt="Logo" style={{ height: 30 }} />
-          <h1 >VNEID NEWS</h1>
+          <img src={quochuy} alt="Logo" style={{ height: 50 }} />
         </div>
       </div>
 

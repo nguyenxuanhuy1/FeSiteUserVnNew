@@ -15,17 +15,6 @@ const Footer = () => {
         <div className="footer-column">
           <div style={{ display: "flex", alignItems: "center", gap: 16 }} onClick={() => navigate("/")}>
             <img src={quochuy} alt="Logo" style={{ height: 50 }} />
-            <h1
-              style={{
-                fontFamily: "'Quicksand', sans-serif",
-                fontSize: 24,
-                color: "#ffffffff",
-                cursor: "pointer",
-                fontWeight: "600",
-              }}
-            >
-              VNEID NEWS
-            </h1>
           </div>
           <div className="social-icons">
             <a

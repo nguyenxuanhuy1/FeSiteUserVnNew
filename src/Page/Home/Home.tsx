@@ -40,7 +40,7 @@ const Home = () => {
             setLoading(true);
             try {
                 const res = await callData({
-                    url: `${LinkApi.NoiBat}?categoryId=${2}&page=1&size=16`,
+                    url: `${LinkApi.NoiBat}?categoryId=${2}&page=1&size=8`,
                 });
                 setNewsData(res.data.data);
             } catch (err: any) {
@@ -57,7 +57,7 @@ const Home = () => {
             setLoading(true);
             try {
                 const res = await callData({
-                    url: `${LinkApi.NoiBat}?categoryId=${3}&page=1&size=16`,
+                    url: `${LinkApi.NoiBat}?categoryId=${3}&page=1&size=8`,
                 });
                 setNewsThoiSu(res.data.data);
             } catch (err: any) {
@@ -74,7 +74,7 @@ const Home = () => {
             setLoading(true);
             try {
                 const res = await callData({
-                    url: `${LinkApi.NoiBat}?categoryId=${4}&page=1&size=16`,
+                    url: `${LinkApi.NoiBat}?categoryId=${4}&page=1&size=8`,
                 });
                 setNewsCongNghe(res.data.data);
             } catch (err: any) {
@@ -91,7 +91,7 @@ const Home = () => {
             setLoading(true);
             try {
                 const res = await callData({
-                    url: `${LinkApi.NoiBat}?categoryId=${5}&page=1&size=16`,
+                    url: `${LinkApi.NoiBat}?categoryId=${5}&page=1&size=8`,
                 });
                 setNewsGiaiTri(res.data.data);
             } catch (err: any) {
